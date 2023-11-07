@@ -7,17 +7,17 @@
 
                 <%= form_for @event do |f| %>
                 <div class="form-group">
-                  <%= f.label :start_date %>
+                  <%= f.label :date %>
                   <%= f.datetime_select :start_date, class: "form-control", placeholder: "Entrez une date", required: true %>
                 </div>
 
                 <div class="form-group">
-                  <%= f.label :duration %>
+                  <%= f.label :durée %>
                   <%= f.number_field :duration, class: "form-control", placeholder: "Entrez une durée (en minutes)", required: true %>
                 </div>
 
                 <div class="form-group">
-                <%= f.label :title %>
+                <%= f.label :titre %>
                 <%= f.text_field :title, class: "form-control", placeholder: "Entrez un titre", required: true %>
                 </div>
 
@@ -27,12 +27,12 @@
                 </div>
 
                 <div class="form-group">
-                <%= f.label :price %>
+                <%= f.label :prix %>
                 <%= f.number_field :price, class: "form-control", placeholder: "Prix TTC", required: true %>
                 </div>
 
                 <div class="form-group">
-                <%= f.label :location %>
+                <%= f.label :localisation %>
                 <%= f.text_field :location, class: "form-control", placeholder: "Où se déroule l'événement", required: true %>
                 </div>
 

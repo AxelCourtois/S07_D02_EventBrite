@@ -1,20 +1,27 @@
 <p style="color: green"><%= notice %></p>
 
-
+<div class="p-5 mb-4 bg-body-tertiary rounded-3">
+      <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold">DARK EVENTBRIDE</h1>
+        <p class="col-md-8 fs-4">Plongez dans l'univers délirant d'Eventbride, là où les événements prennent vie avec plus de paillettes que le sourire de votre tante préférée. Des fêtes époustouflantes, des mariages qui défient les lois de la gravité et des réunions plus excitantes qu'un match de ping-pong entre licornes. Rejoignez-nous pour des moments inoubliables, car chez nous, l'ennui est banni et la folie est obligatoire!</p>
+        <button class="btn btn-outline-light btn-lg" type="button">A toi de jouer</button>
+      </div>
+    </div>
 
 
 <div class="container">
   <div class="row">
-    <div class="col-md-4">
-      <div class="card" style="width: 18rem;">
-       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
-</div>
-    </div>
+    <% Event.all.each do |event|%>
+      <div class="col-sm-3 my-2">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title"><%= event.title %></h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">A <%= event.location %></h6>
+            <p class="card-text"><%= event.description %></p>
+            <%= link_to "Plus d'infos", event_path(event), :class=>"btn btn-outline-light" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
