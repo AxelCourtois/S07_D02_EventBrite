@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
-  root "static_pages#index"
-  
-  get 'static_pages/index'
-  get 'static_pages/secret'
+  root "events#index"
 
   resources :events
   devise_for :users
