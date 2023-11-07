@@ -6,7 +6,17 @@ Rails.application.configure do
   # Code is not reloaded between requests.
   config.cache_classes = true
 
- 
+  config.action_mailer.default_url_options = { :host => 'eventbrite-de-fou.herokuapp.com/' }
+
+  ActionMailer::Base.smtp_settings = {
+  :user_name => ENV['MAILJET_LOGIN'],
+  :password => ENV['MAILJET_PWD'],
+  :domain => 'eventbrite-de-fou.herokuapp.com',
+  :address => 'in-v3.mailjet.com',
+  :port => 587,
+  :authentication => :plain,
+  :enable_starttls_auto => true
+}
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
