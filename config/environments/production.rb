@@ -24,8 +24,6 @@ Rails.application.configure do
   # Apache or NGINX already handles this.
   config.public_file_server.enabled = ENV["RAILS_SERVE_STATIC_FILES"].present?
 
-  config.action_mailer.default_url_options = { :host => 'eventbrite-de-fou.herokuapp.com' }
-
   # Compress CSS using a preprocessor.
   # config.assets.css_compressor = :sass
 
@@ -93,3 +91,15 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 end
+
+config.action_mailer.default_url_options = { :host => 'eventbrite-de-fou.herokuapp.com/' }
+
+  ActionMailer::Base.smtp_settings = {
+  :user_name => ENV['MAILJET_LOGIN'],
+  :password => ENV['MAILJET_PWD'],
+  :domain => 'eventbrite-de-fou.herokuapp.com',
+  :address => 'in-v3.mailjet.com',
+  :port => 587,
+  :authentication => :plain,
+  :enable_starttls_auto => true
+}
