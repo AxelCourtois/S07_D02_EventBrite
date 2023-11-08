@@ -6,7 +6,7 @@ Rails.application.configure do
   # Code is not reloaded between requests.
   config.cache_classes = true
 
-  config.action_mailer.default_url_options = { :host => 'eventbrite-de-fou.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'eventbrite-de-fou-034d4b4516f4.herokuapp.com' }
 
   ActionMailer::Base.smtp_settings = {
   :user_name => ENV['MAILJET_LOGIN'],
