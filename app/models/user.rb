@@ -1,6 +1,8 @@
 class User < ApplicationRecord
 
   has_many :events, through: :attendances
+  has_many :authored_events, class_name: 'Event', foreign_key: :administrator_id
+
   has_many :attendances
 
   after_create :welcome_send

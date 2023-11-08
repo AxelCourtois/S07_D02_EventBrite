@@ -1,6 +1,6 @@
-<p style="color: green"><%= notice %></p>
-
 <%= render @event %>
+
+<!-- 
 
 <div>
   <p> Voici l'event <%= @event.title%> </p>
@@ -8,4 +8,33 @@
   <%= link_to "Back to events", events_path %>
 
   <%= button_to "Destroy this event", @event, method: :delete %>
+</div> 
+
+-->
+
+<div class="flex">
+    <%= link_to "< Home", events_path, class:"btn btn-outline-light btn-sm ms-3" %>
 </div>
+
+<div class="w-100 m-auto">
+  <div class="container w-50 ">
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title text-center"><%= @event.title%></h5>
+        <p class="card-text text-center"><%= @event.description%></p>
+        <p class="card-text">Admin : <%= @event.administrator.email%></p>
+        <p class="card-text">Lieu : <%= @event.location%></p>
+        <p class="card-text">Date : <%= @event.start_date%></p>
+        <p class="card-text">Prix : <%= @event.price%> €</p>
+        <p class="card-text">Durée : <%= @event.duration%> min</p>
+        <% if current_user == @event.administrator %>
+          <div class="d-flex justify-content-between">
+            <%= link_to "Editer", edit_event_path(@event), class:"btn btn-outline-success" %> 
+            <%= button_to "Supprimer", @event, method: :delete, class:"btn btn-outline-danger " %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+

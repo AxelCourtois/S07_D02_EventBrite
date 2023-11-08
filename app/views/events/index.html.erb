@@ -1,12 +1,17 @@
-<p style="color: green"><%= notice %></p>
 
-<div class="p-5 mb-4 bg-body-tertiary rounded-3">
+<div class="p-5 mb-4 mt-3 bg-body-tertiary rounded-3">
       <div class="container-fluid py-5">
         <h1 class="display-5 fw-bold">DARK EVENTBRIDE</h1>
         <p class="col-md-8 fs-4">Plongez dans l'univers délirant d'Eventbride, là où les événements prennent vie avec plus de paillettes que le sourire de votre tante préférée. Des fêtes époustouflantes, des mariages qui défient les lois de la gravité et des réunions plus excitantes qu'un match de ping-pong entre licornes. Rejoignez-nous pour des moments inoubliables, car chez nous, l'ennui est banni et la folie est obligatoire!</p>
-        <button class="btn btn-outline-light btn-lg" type="button">A toi de jouer</button>
+        <% if user_signed_in? %>
+        <%= link_to "A toi de jouer", new_event_path, class:"btn btn-outline-light btn-lg" %>
+        <% else %>
+        <%= link_to "A toi de jouer", new_user_session_path, class:"btn btn-outline-light btn-lg" %>
+        <% end %>
       </div>
     </div>
+
+    
 
 
 <div class="container">
@@ -25,3 +30,7 @@
     <% end %>
   </div>
 </div>
+
+
+
+
