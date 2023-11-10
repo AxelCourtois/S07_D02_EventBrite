@@ -44,7 +44,7 @@
               <ul class="dropdown-menu">
                 <% if user_signed_in? %>
                 <li>
-                  <%= link_to "Mon profil", user_path(current_user), :class=>"dropdown-item" %>
+                  <%= link_to "Profil", user_path(current_user), :class=>"dropdown-item" %>
                 </li>
                 <li>
                   <%= link_to "Editer profil", edit_user_registration_path, :class=>"dropdown-item" %>
